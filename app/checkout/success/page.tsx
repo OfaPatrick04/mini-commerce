@@ -4,6 +4,7 @@ import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Link from "next/link";
 
 function generateOrderId() {
