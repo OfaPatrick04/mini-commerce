@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import Card from '@/components/ui/Card';
@@ -8,7 +8,7 @@ import { useProduct } from '@/hooks/useProducts';
 import { ShoppingCart, BadgeDollarSign } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useCartStore } from '@/app/cartStore';
-import { ToastProvider, Toast, ToastTitle, ToastDescription } from '@/components/ui/Toast';
+import { toast } from 'sonner';
 
 
 export default function ProductDetailPage() {
@@ -16,7 +16,7 @@ export default function ProductDetailPage() {
   const slug = typeof params?.slug === 'string' ? params.slug : Array.isArray(params?.slug) ? params.slug[0] : '';
   const { data: product, isLoading, error } = useProduct(slug);
   const addItem = useCartStore(state => state.addItem);
-  const [showToast, setShowToast] = useState(false);
+  // No need for showToast state with Sonner
 
   if (isLoading) {
     return <main className="p-8">Loading product...</main>;
@@ -33,12 +33,12 @@ export default function ProductDetailPage() {
       image: product.image,
       price: product.price,
     });
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 2000);
+    toast.success(`${product.name} added to cart!`, {
+      description: 'Check your cart for details.',
+    });
   };
 
   return (
-    <ToastProvider>
       <main className="p-8 flex justify-center items-center min-h-[60vh]">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -64,13 +64,6 @@ export default function ProductDetailPage() {
             </div>
           </Card>
         </motion.div>
-        {showToast && (
-          <Toast open={showToast} className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
-            <ToastTitle>Added to Cart</ToastTitle>
-            <ToastDescription>{product.name} has been added to your cart.</ToastDescription>
-          </Toast>
-        )}
       </main>
-    </ToastProvider>
   );
 }
