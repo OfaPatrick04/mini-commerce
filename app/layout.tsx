@@ -6,6 +6,7 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Providers from '../components/Providers';
+import { ErrorBoundary } from '../components/ErrorBoundary';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,14 +27,36 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Providers>
-          <Header />
-          <div className="pt-20 pb-12 min-h-screen flex flex-col">
-            {children}
-          </div>
-          <Footer />
-        </Providers>
+      <head>
+        <meta name="description" content="Mini-Commerce: Modern, fast, and responsive e-commerce built with Next.js." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="Mini-Commerce" />
+        <meta property="og:description" content="Modern, fast, and responsive e-commerce built with Next.js." />
+        <meta property="og:image" content="/vercel.svg" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Mini-Commerce" />
+        <meta name="twitter:description" content="Modern, fast, and responsive e-commerce built with Next.js." />
+        <meta name="twitter:image" content="/vercel.svg" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Store',
+          name: 'Mini-Commerce',
+          description: 'Modern, fast, and responsive e-commerce built with Next.js.',
+          url: 'https://your-demo-url.com',
+          logo: '/vercel.svg',
+        }) }} />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning>
+        <ErrorBoundary>
+          <Providers>
+            <Header />
+            <div className="pt-20 pb-12 min-h-screen flex flex-col">
+              {children}
+            </div>
+            <Footer />
+          </Providers>
+        </ErrorBoundary>
       </body>
     </html>
   );
