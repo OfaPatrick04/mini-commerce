@@ -2,11 +2,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
-import { ThemeProvider } from 'next-themes';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Providers from '../components/Providers';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,21 +23,17 @@ export const metadata: Metadata = {
 };
 
 
-const queryClient = new QueryClient();
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <QueryClientProvider client={queryClient}>
-            <Header />
-            <div className="pt-20 pb-12 min-h-screen flex flex-col">
-              {children}
-            </div>
-            <Footer />
-          </QueryClientProvider>
-        </ThemeProvider>
+        <Providers>
+          <Header />
+          <div className="pt-20 pb-12 min-h-screen flex flex-col">
+            {children}
+          </div>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
