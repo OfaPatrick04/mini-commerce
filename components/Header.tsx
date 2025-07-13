@@ -55,7 +55,7 @@ export default function Header() {
               🛒 Mini‑Commerce
             </span>
           </Link>
-          <nav className="hidden md:flex items-center gap-6">
+          {/* <nav className="hidden md:flex items-center gap-6">
             {[
               { href: "/checkout", label: "Checkout" },
               { href: "/about", label: "About" },
@@ -69,7 +69,7 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-          </nav>
+          </nav> */}
         </div>
 
         {/* Desktop Cart + Theme */}
@@ -144,7 +144,7 @@ export default function Header() {
                   🛒 Mini‑Commerce
                 </Link>
 
-                {[
+                {/* {[
                   { href: "/checkout", label: "Checkout" },
                   { href: "/about", label: "About" },
                   { href: "/contact", label: "Contact" },
@@ -157,7 +157,7 @@ export default function Header() {
                   >
                     {link.label}
                   </Link>
-                ))}
+                ))} */}
 
                 <div className="mt-6 border-t border-gray-200 dark:border-gray-800 pt-6">
                   <Link
