@@ -3,13 +3,13 @@
 import React, { useState } from 'react';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
-import { useCartStore } from '@/app/cartStore';
+import { useCartStore, getCartSubtotal } from '@/app/cartStore';
 import { ShoppingCart, BadgeDollarSign, CheckCircle2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 export default function CheckoutPage() {
   const items = useCartStore(state => state.items);
-  const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const subtotal = getCartSubtotal(items);
   const clearCart = useCartStore(state => state.clearCart);
   const router = useRouter();
   const [placingOrder, setPlacingOrder] = useState(false);

@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, ShoppingCart } from "lucide-react";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
-import { FocusTrap } from "focus-trap-react";
 import ThemeToggle from "./ThemeToggle";
 import { useCartStore } from "@/app/cartStore";
 

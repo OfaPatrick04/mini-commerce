@@ -16,13 +16,11 @@ interface CartState {
   removeItem: (id: string) => void;
   changeQuantity: (id: string, quantity: number) => void;
   clearCart: () => void;
-  subtotal: number;
-  total: number;
 }
 
 export const useCartStore = create<CartState>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       items: [],
       addItem: (item) => {
         set((state) => {
@@ -50,8 +48,6 @@ export const useCartStore = create<CartState>()(
         }));
       },
       clearCart: () => set({ items: [] }),
-      subtotal: 0,
-      total: 0,
     }),
     {
       name: 'mini-commerce-cart',
@@ -60,8 +56,7 @@ export const useCartStore = create<CartState>()(
   )
 );
 
+
 // Selectors for derived state
-useCartStore.subscribe((state) => {
-  state.subtotal = state.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  state.total = state.subtotal; // Add shipping/tax logic if needed
-});
+export const getCartSubtotal = (items: CartItem[]) => items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+export const getCartTotal = (items: CartItem[]) => getCartSubtotal(items); // Add shipping/tax logic if needed

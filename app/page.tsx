@@ -2,7 +2,6 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useProducts } from '../hooks/useProducts';
 import { useCartStore } from '@/app/cartStore';
 import Hero from '../components/Hero';

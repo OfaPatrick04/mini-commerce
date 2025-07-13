@@ -2,7 +2,6 @@
 import React from 'react';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
-import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import { useCartStore } from '@/app/cartStore';
 import { useProduct } from '@/hooks/useProducts';

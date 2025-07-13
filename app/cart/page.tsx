@@ -4,7 +4,7 @@ import React from 'react';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import Image from 'next/image';
-import { useCartStore } from '@/app/cartStore';
+import { useCartStore, getCartSubtotal } from '@/app/cartStore';
 import { ShoppingCart, Trash2 } from 'lucide-react';
 
 export default function CartPage() {
@@ -12,7 +12,7 @@ export default function CartPage() {
   const removeItem = useCartStore(state => state.removeItem);
   const changeQuantity = useCartStore(state => state.changeQuantity);
   const clearCart = useCartStore(state => state.clearCart);
-  const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const subtotal = getCartSubtotal(items);
 
   return (
     <main className="px-2 sm:px-8 py-8 min-h-[60vh] flex flex-col items-center w-full bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-blue-950">
