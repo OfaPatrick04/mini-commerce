@@ -16,7 +16,7 @@ export default function ThemeToggle() {
   const isDark = resolvedTheme === 'dark';
 
   return (
-    <div className="fixed top-4 right-4 flex items-center z-50">
+    <div className="sticky top-4 right-4 flex items-center z-50">
       <span className="mr-2"><Sun size={18} className={isDark ? 'text-gray-400' : 'text-yellow-400'} /></span>
       <button
         onClick={() => setTheme(isDark ? 'light' : 'dark')}

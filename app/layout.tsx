@@ -51,7 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ErrorBoundary>
           <Providers>
             <Header />
-            <div className="pt-20 pb-12 min-h-screen flex flex-col">
+            <div className="min-h-screen flex flex-col">
               {children}
             </div>
             <Footer />
