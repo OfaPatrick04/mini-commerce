@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { ShoppingCart } from "lucide-react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { cn } from "../lib/utils";
 import Button from "@/components/ui/Button";
@@ -21,7 +21,7 @@ export default function Hero() {
         aria-hidden="true"
       />
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
-        <div className="w-full h-full bg-white/60 dark:bg-gray-900/70" />
+        <div className="w-full h-full bg-white/30 dark:bg-gray-900/70" />
       </div>
 
       {/* Split layout */}
@@ -39,8 +39,8 @@ export default function Hero() {
               <span className="absolute -bottom-2 left-0 w-full h-2 bg-blue-300 dark:bg-blue-700 rounded"></span>
             </span>
           </h1>
-          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 text-center md:text-left mb-6">
-            A lightning‑fast, fully responsive e‑commerce template. Discover new products, add to cart, and checkout—all with a seamless UI.
+          <p className="text-base sm:text-lg text-black dark:text-gray-300 text-center md:text-left mb-6">
+            A lightning‑fast, fully responsive mini e‑commerce platform. Discover new products, add to cart, and checkout, all with a seamless UI.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start w-full">
             <Button
@@ -73,7 +73,20 @@ export default function Hero() {
               "flex items-center justify-center shadow-2xl"
             )}
           >
-            <ShoppingCart size={40} className="text-blue-600 dark:text-blue-400" />
+            {/* Light mode image */}
+            <Image 
+              src="/my_logo_full-black.png"
+              alt="Mini-Commerce Logo"
+              fill
+              className="object-center block dark:hidden"
+            />
+            {/* Dark mode image */}
+            <Image 
+              src="/my_logo_full-white.png"
+              alt="Mini-Commerce Logo (Dark)"
+              fill
+              className="object-center hidden dark:block"
+            />
           </div>
         </motion.div>
       </div>

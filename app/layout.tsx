@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -44,8 +43,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           name: 'Mini-Commerce',
           description: 'Modern, fast, and responsive e-commerce built with Next.js.',
           url: 'https://your-demo-url.com',
-          logo: '/vercel.svg',
+          logo: '/my_icon_gold.png',
         }) }} />
+        <link rel="icon" href="/my_logo_gold.png" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning>
         <ErrorBoundary>

@@ -38,7 +38,7 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 left-0 w-full z-50 backdrop-blur-lg bg-white/50 dark:bg-gray-900/50 shadow-md transition-all ${
+      className={`sticky top-0 left-0 w-full z-[1000] backdrop-blur-lg bg-white/50 dark:bg-gray-900/50 shadow-md transition-all ${
         scrolled
           ? "py-2 bg-white/80 dark:bg-gray-900/80"
           : "py-4 bg-white/50 dark:bg-gray-900/50"
