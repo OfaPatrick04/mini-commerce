@@ -41,10 +41,16 @@ export default function ProductCard({
       </div>
 
       {/* Title & Description */}
-      <h3 className="text-center font-extrabold text-xl text-gray-800 dark:text-gray-100 mb-2 px-6">
+      <h3
+        className="text-center font-extrabold text-xl text-gray-800 dark:text-gray-100 mb-2 px-6 line-clamp-2 min-h-[2.75rem]"
+        style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
+      >
         {product.name}
       </h3>
-      <p className="text-center text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-2 px-6">
+      <p
+        className="text-center text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-2 px-6 min-h-[2.5rem]"
+        style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
+      >
         {product.description}
       </p>
 
