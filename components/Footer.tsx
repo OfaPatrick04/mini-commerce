@@ -20,10 +20,10 @@ export default function Footer() {
         <a href="https://wa.me/2348163563529" target="_blank" rel="noopener" aria-label="WhatsApp" className="hover:text-[#25D366] text-xl transition">
           <FaWhatsapp />
         </a>
-        <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" className="hover:text-[#0A66C2] text-xl transition">
+        <a href="https://linkedin.com/in/ofa-patrick" target="_blank" rel="noopener" aria-label="LinkedIn" className="hover:text-[#0A66C2] text-xl transition">
           <FaLinkedin />
         </a>
-        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub" className="hover:text-[#171515] text-xl transition">
+        <a href="https://github.com/ofapatrick04" target="_blank" rel="noopener" aria-label="GitHub" className="hover:text-[#171515] text-xl transition">
           <FaGithub />
         </a>
       </div>
