@@ -59,7 +59,3 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 - Edit `app/page.tsx` for the product catalogue
 - Update color scheme in `globals.css` and UI components for branding
-
-## License
-
-MIT
