@@ -1,41 +1,56 @@
-
 # Mini-Commerce
 
-Modern, premium e-commerce app built with Next.js, React, Zustand, and Tailwind CSS.
+## Project Overview
+
+Mini-Commerce is a client-side prototype of a boutique e-commerce shop. Visitors can browse a catalogue, view product details, manage a cart, and complete a mock checkout. All state persists via localStorage. No backend required.
 
 ## Features
 
-- Luxury & Bold color scheme: Deep Purple (#8b5cf6, #c4b5fd) and Gold Accents (#f59e0b, #facc15)
-- Responsive, boutique-inspired UI for fashion, jewelry, and beauty
-- Light & Dark mode support
-- Glassmorphic cards, sticky summaries, and animated transitions
-- Cart logic with add/remove/quantity controls (Zustand)
-- Checkout flow with order success and unique order ID
-- Premium typography (Geist font)
-- SEO, accessibility, and mobile-first design
+- **Catalogue** (`/`): Browse at least 8 products (image, name, price). Data is fetched with React Query from a local JSON file and seeded to localStorage.
+- **Product Detail** (`/product/[slug]`): View full product info and add to cart.
+- **Cart** (`/cart`): Change quantity, remove items, view subtotal/total. Cart state is managed by Zustand and persists to localStorage.
+- **Checkout Flow** (`/checkout` → success): Review order, place order, and see a thank-you page with a random order ID.
+- **Extras**: Responsive design, dark mode, glassmorphic cards, animated transitions, search/filters (optional).
 
-## Tech Stack
+## Design Approach
 
-- [Next.js](https://nextjs.org) 14+
-- [React](https://react.dev) 19
-- [Zustand](https://zustand-demo.pmnd.rs/) (cart state)
-- [Tailwind CSS](https://tailwindcss.com)
+- **Modern, mobile-first**: Responsive grid/flex layouts using Tailwind CSS utilities and custom classes.
+- **Accessibility**: Semantic HTML, keyboard navigation, alt text on all images.
+- **Visual polish**: Glassmorphism, sticky summaries, smooth animations.
+
+## Tools & Techniques
+
+- [Next.js 14 (App Router)](https://nextjs.org)
+- [React 19](https://react.dev)
+- [TypeScript (strict mode)](https://www.typescriptlang.org/)
+- [React Query](https://tanstack.com/query/latest) (catalogue fetching, caching, loading/error UI)
+- [Zustand](https://zustand-demo.pmnd.rs/) (cart state, selectors, persistence)
+- [Tailwind CSS](https://tailwindcss.com) (utility-first styling)
 - [Framer Motion](https://www.framer.com/motion/) (animations)
 - [Lucide React](https://lucide.dev/) (icons)
 - [Sonner](https://sonner.emilkowal.com/) (toasts)
+- **Testing**: At least one React component test (Jest + RTL) or Playwright e2e
+- **Linting/Formatting**: ESLint & Prettier (must pass)
+
+## SEO Strategy
+
+- Meta tags, Open Graph, and Twitter cards for all pages
+- Structured data (JSON-LD) for enhanced search visibility
+- Image optimization with `next/image`
+- Fast, mobile-first performance
+
+## Error Handling
+
+- Graceful UI for failed catalogue fetch, cart edge cases, and unknown routes
+- Error boundaries for React errors
+- User-friendly toasts and fallback screens
 
 ## Getting Started
 
-Run the development server:
-
 ```bash
-npm run dev
-# or
+npm install
 
-# or
-pnpm dev
-# or
-bun dev
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
@@ -44,10 +59,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 - Edit `app/page.tsx` for the product catalogue
 - Update color scheme in `globals.css` and UI components for branding
-
-## Deployment
-
-Deploy easily on [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
 
 ## License
 

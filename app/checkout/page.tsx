@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import { useCartStore, getCartSubtotal } from "@/app/cartStore";
-import { ShoppingCart, BadgeDollarSign, ChevronLeft } from "lucide-react";
+import { ShoppingCart, ChevronLeft } from "lucide-react";
 
 export default function CheckoutPage() {
   const items = useCartStore((s) => s.items);
@@ -97,7 +97,7 @@ export default function CheckoutPage() {
                 Total:
               </span>
               <span className="text-3xl font-extrabold text-blue-600 dark:text-blue-400 flex items-center gap-2">
-                ${subtotal.toFixed(2)} <BadgeDollarSign size={28} />
+                ${subtotal.toFixed(2)}
               </span>
             </div>
 
