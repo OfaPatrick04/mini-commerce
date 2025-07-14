@@ -1,5 +1,7 @@
 'use client';
 import React, { useState } from 'react';
+import { ArrowUpCircle } from 'lucide-react';
+import { useEffect, useState as useState2 } from 'react';
 import { useProducts } from '../hooks/useProducts';
 import { useCartStore } from '@/app/cartStore';
 import Hero from '../components/Hero';
@@ -24,9 +26,31 @@ export default function HomePage() {
     return matchesSearch && matchesMin && matchesMax;
   });
 
+  // Show back-to-top button after scrolling down
+  const [showTop, setShowTop] = useState2(false);
+  useEffect(() => {
+    const onScroll = () => setShowTop(window.scrollY > 300);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <>
       <Hero />
+
+      {/* Back to Top Button */}
+      {showTop && (
+        <button
+          aria-label="Back to top"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 bg-white/80 dark:bg-gray-900/80 border border-gray-300 dark:border-gray-700 rounded-full shadow-lg p-1 sm:p-2 hover:bg-white dark:hover:bg-gray-800 transition-colors animate-bounce"
+          style={{ animation: 'bounce 1.5s infinite alternate' }}
+        >
+          <ArrowUpCircle
+            className="text-blue-600 dark:text-blue-400 w-7 h-7 sm:w-9 sm:h-9"
+          />
+        </button>
+      )}
 
       <section id="catalogue" className="px-4 sm:px-8 py-8">
         {/* Header & Back-to-Top */}
