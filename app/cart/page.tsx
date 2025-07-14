@@ -123,13 +123,6 @@ export default function CartPage() {
                   Proceed to Checkout
                 </Button>
               </Link>
-
-              {/* Policy Notes */}
-              <div className="mt-4 flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400">
-                <span>Free shipping on orders over $50</span>
-                <span>30‑day return policy</span>
-                <span>Secure checkout</span>
-              </div>
             </Card>
           </div>
         </div>

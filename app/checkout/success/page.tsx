@@ -84,7 +84,7 @@ export default function SuccessPage() {
             <span>Free shipping on your next order</span>
             <span>
               Need help?{" "}
-              <Link href="/contact" className="underline text-blue-600 dark:text-blue-400">
+              <Link href="#footer" className="underline text-blue-600 dark:text-blue-400">
                 Contact support
               </Link>
             </span>

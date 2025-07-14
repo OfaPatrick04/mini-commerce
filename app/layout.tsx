@@ -33,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta property="og:description" content="Modern, fast, and responsive e-commerce built with Next.js." />
         <meta property="og:image" content="/my-logo-full-gold.png" />
         <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="/my-logo-full-gold.png" />
         <meta name="twitter:title" content="Mini-Commerce" />
         <meta name="twitter:description" content="Modern, fast, and responsive e-commerce built with Next.js." />
         <meta name="twitter:image" content="/my-logo-full-gold.png" />

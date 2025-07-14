@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import { useCartStore } from '@/app/cartStore';
 import { useProduct } from '@/hooks/useProducts';
-import { ShoppingCart, BadgeDollarSign, Star } from 'lucide-react';
+import { ShoppingCart, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
 
@@ -89,13 +89,6 @@ export default function ProductDetailPage() {
               className="group-hover:scale-105 transition-transform duration-300"
             />
           </div>
-          {/* <div className="flex gap-2 overflow-x-auto">
-            {product.images.map((img) => (
-              <div key={img} className="w-16 h-16 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800">
-                <Image src={img} alt="" width={64} height={64} objectFit="cover" />
-              </div>
-            ))}
-          </div> */}
         </div>
 
         {/* Right: Details & Actions */}
@@ -104,7 +97,6 @@ export default function ProductDetailPage() {
           <div className="flex items-center justify-between">
             <h1 className="text-4xl font-extrabold text-gray-900 dark:text-gray-100 flex items-center gap-2">
               {product.name}
-              <BadgeDollarSign className="text-blue-400 dark:text-blue-300" size={28} />
             </h1>
             {/* Example: static rating */}
             <div className="flex items-center gap-1">

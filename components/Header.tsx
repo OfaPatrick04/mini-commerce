@@ -90,7 +90,13 @@ export default function Header() {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   className="absolute -top-2 -right-2 bg-gradient-to-r from-blue-600 to-pink-500 text-white text-xs font-bold rounded-full px-2 py-0.5 shadow border-2 border-white dark:border-gray-900"
-                  style={{ minWidth: 20, minHeight: 20, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                  style={{
+                    minWidth: 20,
+                    minHeight: 20,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
                 >
                   {cartCount}
                 </motion.span>
@@ -100,20 +106,49 @@ export default function Header() {
         </div>
 
         {/* Mobile Hamburger */}
-        <button
-          onClick={() => setMenuOpen(true)}
-          aria-label="Toggle menu"
-          className="md:hidden p-2 rounded-lg bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 shadow hover:shadow-lg transition"
-        >
-          <Menu size={28} className="text-blue-600 dark:text-blue-400" />
-        </button>
+        <div className="md:hidden flex items-center gap-4">
+          <motion.div animate={controls} className="relative">
+            <Link
+              href="/cart"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 shadow hover:shadow-xl transition-all font-medium text-gray-700 dark:text-gray-200"
+            >
+              <ShoppingCart
+                size={22}
+                className="text-blue-600 dark:text-blue-400 group-hover:text-pink-500 transition-colors"
+              />
+              <span className="hidden lg:inline">Cart</span>
+              {cartCount > 0 && (
+                <motion.span
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className="absolute -top-2 -right-2 bg-gradient-to-r from-blue-600 to-pink-500 text-white text-xs font-bold rounded-full px-2 py-0.5 shadow border-2 border-white dark:border-gray-900"
+                  style={{
+                    minWidth: 20,
+                    minHeight: 20,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  {cartCount}
+                </motion.span>
+              )}
+            </Link>
+          </motion.div>
+          <button
+            onClick={() => setMenuOpen(true)}
+            aria-label="Toggle menu"
+            className="md:hidden p-2 rounded-lg bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 shadow hover:shadow-lg transition"
+          >
+            <Menu size={28} className="text-blue-600 dark:text-blue-400" />
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
           <>
-            {/* Overlay outside FocusTrap to prevent double event propagation */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -121,33 +156,33 @@ export default function Header() {
               onClick={() => setMenuOpen(false)}
               className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 h-screen"
             />
-              <motion.nav
-                initial={{ x: "100%" }}
-                animate={{ x: 0 }}
-                exit={{ x: "100%" }}
-                transition={{ type: "tween", duration: 0.25 }}
-                className="fixed top-0 right-0 h-screen w-[60vw] bg-white dark:bg-gray-900 z-50 shadow-xl border-l border-gray-200 dark:border-gray-800 flex flex-col p-6"
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <ThemeToggle />
-                  <button
-                    onClick={() => setMenuOpen(false)}
-                    className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800"
-                    aria-label="Close menu"
-                  >
-                    <X size={24} className="text-blue-600 dark:text-blue-400" />
-                  </button>
-                </div>
-
-                <Link
-                  href="/"
+            <motion.nav
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.25 }}
+              className="fixed top-0 right-0 h-screen w-[60vw] bg-white dark:bg-gray-900 z-50 shadow-xl border-l border-gray-200 dark:border-gray-800 flex flex-col p-6"
+            >
+              <div className="flex items-center justify-between mb-2">
+                <ThemeToggle />
+                <button
                   onClick={() => setMenuOpen(false)}
-                  className="mt-4 mb-6 text-2xl font-extrabold text-blue-600 dark:text-blue-400"
+                  className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800"
+                  aria-label="Close menu"
                 >
-                  🛒 Mini‑Commerce
-                </Link>
+                  <X size={24} className="text-blue-600 dark:text-blue-400" />
+                </button>
+              </div>
 
-                {/* {[
+              <Link
+                href="/"
+                onClick={() => setMenuOpen(false)}
+                className="mt-4 mb-6 text-2xl font-extrabold text-blue-600 dark:text-blue-400"
+              >
+                🛒 Mini‑Commerce
+              </Link>
+
+              {/* {[
                   { href: "/checkout", label: "Checkout" },
                   { href: "/about", label: "About" },
                   { href: "/contact", label: "Contact" },
@@ -162,25 +197,25 @@ export default function Header() {
                   </Link>
                 ))} */}
 
-                <div className="mt-6 border-t border-gray-200 dark:border-gray-800 pt-6">
-                  <Link
-                    href="/cart"
-                    onClick={() => setMenuOpen(false)}
-                    className="relative flex items-center gap-3 p-2 rounded-lg bg-white/80 dark:bg-gray-800/80 shadow border border-gray-200 dark:border-gray-700"
-                  >
-                    <ShoppingCart
-                      size={24}
-                      className="text-blue-600 dark:text-blue-400"
-                    />
-                    <span>Cart</span>
-                    {cartCount > 0 && (
-                      <span className="absolute -top-2 -right-2 bg-gradient-to-r from-blue-600 to-pink-500 text-white text-xs font-bold rounded-full px-2 py-0.5 shadow border-2 border-white dark:border-gray-900">
-                        {cartCount}
-                      </span>
-                    )}
-                  </Link>
-                </div>
-              </motion.nav>
+              <div className="mt-6 border-t border-gray-200 dark:border-gray-800 pt-6">
+                <Link
+                  href="/cart"
+                  onClick={() => setMenuOpen(false)}
+                  className="relative flex items-center gap-3 p-2 rounded-lg bg-white/80 dark:bg-gray-800/80 shadow border border-gray-200 dark:border-gray-700"
+                >
+                  <ShoppingCart
+                    size={24}
+                    className="text-blue-600 dark:text-blue-400"
+                  />
+                  <span>Cart</span>
+                  {cartCount > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-gradient-to-r from-blue-600 to-pink-500 text-white text-xs font-bold rounded-full px-2 py-0.5 shadow border-2 border-white dark:border-gray-900">
+                      {cartCount}
+                    </span>
+                  )}
+                </Link>
+              </div>
+            </motion.nav>
           </>
         )}
       </AnimatePresence>
