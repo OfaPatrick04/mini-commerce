@@ -1,83 +1,116 @@
-import React from 'react';
-import Image from 'next/image';
-import Button from '@/components/ui/Button';
-import { Product } from '@/hooks/useProducts';
+"use client";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import Button from "@/components/ui/Button";
+import { Product } from "@/hooks/useProducts";
+import { toast } from "sonner";
 
 export interface ProductCardProps {
-  product: {
-    id: string;
-    name: string;
-    slug: string;
-    image: string;
-    price: number;
-    description: string;
-  };
+  product: Product;
   cartItem?: { id: string; quantity: number };
   addItem: (item: Product) => void;
   changeQuantity: (id: string, quantity: number) => void;
   removeItem: (id: string) => void;
 }
 
-export default function ProductCard({ product, cartItem, addItem, changeQuantity, removeItem }: ProductCardProps) {
-  const inCart = !!cartItem;
+export default function ProductCard({
+  product,
+  cartItem,
+  addItem,
+  changeQuantity,
+  removeItem,
+}: ProductCardProps) {
+  const inCart = Boolean(cartItem);
+
   return (
-    <div
-      className="relative rounded-2xl p-5 flex flex-col items-center bg-white/70 dark:bg-gray-900/70 shadow-xl border border-gray-200 dark:border-gray-800 backdrop-blur-md hover:scale-[1.02] transition cursor-pointer"
-      onClick={() => window.location.href = `/product/${product.slug}`}
+    <Link
+      href={`/product/${product.slug}`}
+      className="group block relative rounded-2xl bg-white/70 dark:bg-gray-900/70 border border-gray-200 dark:border-gray-800 backdrop-blur-md shadow-lg hover:shadow-2xl transform transition hover:-translate-y-1 pb-6"
+      aria-label={`View details for ${product.name}`}
     >
-      <Image src={product.image} alt={product.name} width={96} height={96} className="w-24 h-24 object-contain mb-4 rounded-xl bg-gray-100 dark:bg-gray-800 shadow" />
-      <h2 className="font-extrabold text-lg mb-1 text-blue-700 dark:text-blue-300 text-center">{product.name}</h2>
-      <p className="text-gray-600 dark:text-gray-300 mb-2 text-center text-sm line-clamp-2">{product.description}</p>
-      <span className="font-bold text-blue-600 dark:text-blue-400 mb-2 text-lg">${product.price.toFixed(2)}</span>
-      <div className="mt-2 w-full flex flex-col items-center gap-2">
+      {/* Image */}
+      <div className="w-full aspect-square overflow-hidden rounded-t-xl mb-4 bg-gray-100 dark:bg-gray-800 relative">
+        <Image
+          src={product.image}
+          alt={product.name}
+          fill
+          style={{ objectFit: 'contain' }}
+          className="group-hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+
+      {/* Title & Description */}
+      <h3 className="text-center font-extrabold text-xl text-gray-800 dark:text-gray-100 mb-2 px-6">
+        {product.name}
+      </h3>
+      <p className="text-center text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-2 px-6">
+        {product.description}
+      </p>
+
+      {/* Price & Badges */}
+      <div className="flex items-center justify-center gap-2 mb-4">
+        <span className="inline-block px-3 py-1 bg-blue-600 text-white rounded-full font-semibold">
+          ${product.price.toFixed(2)}
+        </span>
+        {inCart && (
+          <span className="inline-block px-2 py-1 bg-green-200 text-green-800 rounded-full text-xs font-medium">
+            In Cart: {cartItem!.quantity}
+          </span>
+        )}
+      </div>
+
+      {/* Actions */}
+      <div className="flex justify-center space-x-2 px-6">
         {!inCart ? (
           <Button
             variant="primary"
             className="w-full"
-            onClick={e => {
+            onClick={(e) => {
+              e.preventDefault();
               e.stopPropagation();
-              addItem({
-                id: product.id,
-                name: product.name,
-                slug: product.slug,
-                image: product.image,
-                price: product.price,
-                description: product.description
-              });
+              addItem(product);
+              toast.success(`${product.name} added to cart!`);
             }}
           >
             Add to Cart
           </Button>
         ) : (
-          <div className="flex items-center gap-2 w-full justify-center">
+          <>
             <Button
               variant="outline"
               className="px-3 py-1 text-lg font-bold"
-              onClick={e => {
+              onClick={(e) => {
+                e.preventDefault();
                 e.stopPropagation();
-                if (cartItem.quantity <= 1) {
-                  removeItem(product.id);
+                const qty = cartItem!.quantity - 1;
+                if (qty > 0) {
+                  changeQuantity(product.id, qty);
                 } else {
-                  changeQuantity(product.id, cartItem.quantity - 1);
+                  removeItem(product.id);
+                  toast.info(`${product.name} removed from cart.`);
                 }
               }}
             >
-              -
+              −
             </Button>
-            <span className="px-3 py-1 bg-blue-600 text-white rounded-lg font-bold">{cartItem.quantity}</span>
+            <span className="px-4 py-1 bg-gray-100 dark:bg-gray-800 rounded-lg font-semibold">
+              {cartItem!.quantity}
+            </span>
             <Button
               variant="outline"
               className="px-3 py-1 text-lg font-bold"
-              onClick={e => {
+              onClick={(e) => {
+                e.preventDefault();
                 e.stopPropagation();
-                changeQuantity(product.id, cartItem.quantity + 1);
+                changeQuantity(product.id, cartItem!.quantity + 1);
               }}
             >
               +
             </Button>
-          </div>
+          </>
         )}
       </div>
-    </div>
+    </Link>
   );
 }

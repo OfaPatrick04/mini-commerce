@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "name": "Classic Red Pullover Hoodie",
+    "slug": "classic-red-pullover-hoodie",
+    "price": 24.99,
+    "description": "Elevate your casual wardrobe with our Classic Red Pullover Hoodie. Crafted with a soft cotton blend for ultimate comfort, this vibrant red hoodie features a kangaroo pocket, adjustable drawstring hood, and ribbed cuffs for a snug fit.",
+    "image": "https://i.imgur.com/1twoaDy.jpeg"
+  },
+  {
+    "id": 2,
+    "name": "Classic Heather Gray Hoodie",
+    "slug": "classic-heather-gray-hoodie",
+    "price": 54.50,
+    "description": "Stay cozy and stylish with our Classic Heather Gray Hoodie. Crafted from soft, durable fabric, it features a kangaroo pocket, adjustable drawstring hood, and ribbed cuffs.",
+    "image": "https://i.imgur.com/cHddUCu.jpeg"
+  },
+  {
+    "id": 3,
+    "name": "Classic Grey Hooded Sweatshirt",
+    "slug": "classic-grey-hooded-sweatshirt",
+    "price": 39.95,
+    "description": "Elevate your casual wear with our Classic Grey Hooded Sweatshirt. Made from a soft cotton blend, this hoodie features a front kangaroo pocket, an adjustable drawstring hood, and ribbed cuffs for a snug fit.",
+    "image": "https://i.imgur.com/R2PN9Wq.jpeg"
+  },
+  {
+    "id": 4,
+    "name": "Classic Black Hooded Sweatshirt",
+    "slug": "classic-black-hooded-sweatshirt",
+    "price": 62.10,
+    "description": "Elevate your casual wardrobe with our Classic Black Hooded Sweatshirt. Made from high-quality, soft fabric that ensures comfort and durability.",
+    "image": "https://i.imgur.com/cSytoSD.jpeg"
+  },
+  {
+    "id": 5,
+    "name": "Classic Comfort Fit Joggers",
+    "slug": "classic-comfort-fit-joggers",
+    "price": 18.75,
+    "description": "Discover the perfect blend of style and comfort with our Classic Comfort Fit Joggers. These versatile black joggers feature a soft elastic waistband with an adjustable drawstring.",
+    "image": "https://i.imgur.com/ZKGofuB.jpeg"
+  },
+  {
+    "id": 6,
+    "name": "Sleek White & Orange Wireless Gaming Controller",
+    "slug": "sleek-white-orange-wireless-gaming-controller",
+    "price": 47.80,
+    "description": "Elevate your gaming experience with this state-of-the-art wireless controller, featuring a crisp white base with vibrant orange accents.",
+    "image": "https://i.imgur.com/ZANVnHE.jpeg"
+  },
+  {
+    "id": 7,
+    "name": "Sleek Wireless Headphone & Inked Earbud Set",
+    "slug": "sleek-wireless-headphone-inked-earbud-set",
+    "price": 33.20,
+    "description": "Experience the fusion of style and sound with this sophisticated audio set featuring a pair of sleek, white wireless headphones and durable earbuds.",
+    "image": "https://i.imgur.com/yVeIeDa.jpeg"
+  },
+  {
+    "id": 8,
+    "name": "Sleek Comfort-Fit Over-Ear Headphones",
+    "slug": "sleek-comfort-fit-over-ear-headphones",
+    "price": 19.99,
+    "description": "Experience superior sound quality with our Sleek Comfort-Fit Over-Ear Headphones, designed for prolonged use with cushioned ear cups.",
+    "image": "https://i.imgur.com/SolkFEB.jpeg"
+  },
+  {
+    "id": 9,
+    "name": "Efficient 2-Slice Toaster",
+    "slug": "efficient-2-slice-toaster",
+    "price": 27.49,
+    "description": "Enhance your morning routine with our sleek 2-slice toaster, featuring adjustable browning controls and a removable crumb tray for easy cleaning.",
+    "image": "https://i.imgur.com/keVCVIa.jpeg"
+  },
+  {
+    "id": 10,
+    "name": "Sleek Wireless Computer Mouse",
+    "slug": "sleek-wireless-computer-mouse",
+    "price": 15.00,
+    "description": "Experience smooth and precise navigation with this modern wireless mouse, featuring a glossy finish and a comfortable ergonomic design.",
+    "image": "https://i.imgur.com/w3Y8NwQ.jpeg"
+  },
+  {
+    "id": 11,
+    "name": "Sleek Modern Leather Sofa",
+    "slug": "sleek-modern-leather-sofa",
+    "price": 89.99,
+    "description": "Enhance the elegance of your living space with our Sleek Modern Leather Sofa. Designed with a minimalist aesthetic and luxurious leather finish.",
+    "image": "https://i.imgur.com/Qphac99.jpeg"
+  },
+  {
+    "id": 12,
+    "name": "Mid-Century Modern Wooden Dining Table",
+    "slug": "mid-century-modern-wooden-dining-table",
+    "price": 31.50,
+    "description": "Elevate your dining room with this sleek Mid-Century Modern dining table, featuring an elegant walnut finish and tapered legs.",
+    "image": "https://i.imgur.com/DMQHGA0.jpeg"
+  },
+  {
+    "id": 13,
+    "name": "Elegant Golden-Base Stone Top Dining Table",
+    "slug": "elegant-golden-base-stone-top-dining-table",
+    "price": 74.25,
+    "description": "Elevate your dining space with this luxurious table, featuring a sturdy golden metal base and a smooth stone top.",
+    "image": "https://i.imgur.com/NWIJKUj.jpeg"
+  },
+  {
+    "id": 14,
+    "name": "Modern Elegance Teal Armchair",
+    "slug": "modern-elegance-teal-armchair",
+    "price": 22.40,
+    "description": "Elevate your living space with this beautifully crafted armchair, featuring a sleek wooden frame and vibrant teal upholstery.",
+    "image": "https://i.imgur.com/6kyyIN.jpeg"
+  },
+  {
+    "id": 15,
+    "name": "Elegant Solid Wood Dining Table",
+    "slug": "elegant-solid-wood-dining-table",
+    "price": 59.99,
+    "description": "Enhance your dining space with this sleek, contemporary dining table, crafted from high-quality solid wood with a warm finish.",
+    "image": "https://i.imgur.com/4lTaHfF.jpeg"
+  },
+  {
+    "id": 16,
+    "name": "Futuristic Holographic Soccer Cleats",
+    "slug": "futuristic-holographic-soccer-cleats",
+    "price": 44.10,
+    "description": "Step onto the field and stand out from the crowd with these eye-catching holographic soccer cleats.",
+    "image": "https://i.imgur.com/qNOjJje.jpeg"
+  },
+  {
+    "id": 17,
+    "name": "Rainbow Glitter High Heels",
+    "slug": "rainbow-glitter-high-heels",
+    "price": 28.75,
+    "description": "Step into the spotlight with these eye-catching rainbow glitter high heels. Designed to dazzle, each shoe boasts a kaleidoscope of shimmering colors.",
+    "image": "https://i.imgur.com/62gGzeF.jpeg"
+  },
+  {
+    "id": 18,
+    "name": "Chic Summer Denim Espadrille Sandals",
+    "slug": "chic-summer-denim-espadrille-sandals",
+    "price": 21.99,
+    "description": "Step into summer with style in our denim espadrille sandals. Featuring a braided jute sole and adjustable denim straps.",
+    "image": "https://i.imgur.com/9qrmE1b.jpeg"
+  },
+  {
+    "id": 19,
+    "name": "Vibrant Runners: Bold Orange & Blue Sneakers",
+    "slug": "vibrant-runners-bold-orange-blue-sneakers",
+    "price": 36.80,
+    "description": "Step into style with these eye-catching sneakers featuring a striking combination of orange and blue hues.",
+    "image": "https://i.imgur.com/hKcMNJs.jpeg"
+  },
+  {
+    "id": 20,
+    "name": "Radiant Citrus Eau de Parfum",
+    "slug": "radiant-citrus-eau-de-parfum",
+    "price": 49.95,
+    "description": "Indulge in the essence of summer with this vibrant citrus-scented Eau de Parfum. Encased in a sleek glass bottle with a bold orange cap.",
+    "image": "https://i.imgur.com/xPDwUb3.jpg"
+  }
+]
