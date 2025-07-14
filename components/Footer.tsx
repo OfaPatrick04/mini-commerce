@@ -2,7 +2,7 @@ import { FaWhatsapp, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="w-full px-8 py-8 bg-[#fdf4ff] dark:bg-[#1c1c24] border-t border-[#ddd6fe] dark:border-[#4b5563] mt-16 flex flex-col items-center gap-4 text-center">
+    <footer className="w-full px-8 py-8 bg-[#fdf4ff] dark:bg-[#1c1c24] border-t border-[rgb(221,214,254)] dark:border-[#4b5563] flex flex-col items-center gap-4 text-center">
       <div className="flex flex-col sm:flex-row gap-2 items-center justify-center w-full">
         <span className="font-bold text-lg text-[#8b5cf6] dark:text-[#c4b5fd]">Mini-Commerce</span>
         <span className="hidden sm:inline text-gray-400 mx-2">|</span>

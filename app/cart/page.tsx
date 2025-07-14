@@ -20,7 +20,7 @@ export default function CartPage() {
   const isLoading = false; // change to `true` to see skeletons
 
   return (
-    <main className="min-h-[70vh] bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-blue-950 px-4 sm:px-8 py-12">
+    <main className="min-h-screen bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-blue-950 px-4 sm:px-8 py-12">
       {/* Header */}
       <div className="flex items-center gap-4 mb-10">
         <ShoppingCart size={36} className="text-blue-600 dark:text-blue-400" />
@@ -109,7 +109,7 @@ export default function CartPage() {
                 className="w-full py-3 text-lg"
                 onClick={() => {
                   clearCart();
-                  toast("Cart cleared.", { icon: "🗑️" });
+                  toast.info("Cart cleared.");
                 }}
               >
                 Clear Cart

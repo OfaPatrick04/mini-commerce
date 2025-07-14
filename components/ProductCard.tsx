@@ -65,6 +65,7 @@ export default function ProductCard({
         {!inCart ? (
           <Button
             variant="primary"
+            size="md"
             className="w-full"
             onClick={(e) => {
               e.preventDefault();
@@ -79,7 +80,8 @@ export default function ProductCard({
           <>
             <Button
               variant="outline"
-              className="px-3 py-1 text-lg font-bold"
+              size="md"
+              className="font-bold text-lg"
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
@@ -91,6 +93,7 @@ export default function ProductCard({
                   toast.info(`${product.name} removed from cart.`);
                 }
               }}
+              aria-label={`Decrease quantity of ${product.name}`}
             >
               −
             </Button>
@@ -99,12 +102,14 @@ export default function ProductCard({
             </span>
             <Button
               variant="outline"
-              className="px-3 py-1 text-lg font-bold"
+              size="md"
+              className="font-bold text-lg"
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
                 changeQuantity(product.id, cartItem!.quantity + 1);
               }}
+              aria-label={`Increase quantity of ${product.name}`}
             >
               +
             </Button>

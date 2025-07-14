@@ -20,7 +20,12 @@
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(135deg, #fff 0%, #e0edff 100%);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+.dark body {
+  background: linear-gradient(135deg, #111827 0%, #1e293b 100%);
 }

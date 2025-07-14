@@ -134,38 +134,44 @@ export default function ProductDetailPage() {
             {!inCart ? (
               <Button
                 variant="primary"
-                className="flex-1 flex items-center justify-center gap-2 py-4 text-lg"
+                size="lg"
+                className="flex-1 flex items-center justify-center gap-2"
+                iconBefore={<ShoppingCart size={20} />}
                 onClick={handleAddToCart}
               >
-                <ShoppingCart size={20} /> Add to Cart
+                Add to Cart
               </Button>
             ) : (
               cartItem && (
                 <div className="flex items-center gap-4">
-                  <Button
-                    variant="outline"
-                    className="px-4 py-2 text-xl font-bold"
-                    onClick={() => {
-                      if (cartItem.quantity <= 1) {
-                        removeItem(product.id);
-                        toast.info(`${product.name} removed from cart.`)
-                      } else {
-                        changeQuantity(product.id, cartItem.quantity - 1);
-                      }
-                    }}
-                  >
-                    −
-                  </Button>
+                <Button
+                  variant="outline"
+                  size="md"
+                  className="font-bold text-xl"
+                  onClick={() => {
+                    if (cartItem.quantity <= 1) {
+                      removeItem(product.id);
+                      toast.info(`${product.name} removed from cart.`)
+                    } else {
+                      changeQuantity(product.id, cartItem.quantity - 1);
+                    }
+                  }}
+                  aria-label={`Decrease quantity of ${product.name}`}
+                >
+                  −
+                </Button>
                   <span className="px-5 py-2 bg-blue-600 text-white rounded-lg font-bold text-lg">
                     {cartItem.quantity}
                   </span>
-                  <Button
-                    variant="outline"
-                    className="px-4 py-2 text-xl font-bold"
-                    onClick={() => changeQuantity(product.id, (cartItem?.quantity ?? 1) + 1)}
-                  >
-                    +
-                  </Button>
+                <Button
+                  variant="outline"
+                  size="md"
+                  className="font-bold text-xl"
+                  onClick={() => changeQuantity(product.id, (cartItem?.quantity ?? 1) + 1)}
+                  aria-label={`Increase quantity of ${product.name}`}
+                >
+                  +
+                </Button>
                 </div>
               )
             )}

@@ -128,13 +128,16 @@ export default function Header() {
                 transition={{ type: "tween", duration: 0.25 }}
                 className="fixed top-0 right-0 h-screen w-[60vw] bg-white dark:bg-gray-900 z-50 shadow-xl border-l border-gray-200 dark:border-gray-800 flex flex-col p-6"
               >
-                <button
-                  onClick={() => setMenuOpen(false)}
-                  className="self-end p-2 rounded-lg bg-gray-100 dark:bg-gray-800"
-                  aria-label="Close menu"
-                >
-                  <X size={24} className="text-blue-600 dark:text-blue-400" />
-                </button>
+                <div className="flex items-center justify-between mb-2">
+                  <ThemeToggle />
+                  <button
+                    onClick={() => setMenuOpen(false)}
+                    className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800"
+                    aria-label="Close menu"
+                  >
+                    <X size={24} className="text-blue-600 dark:text-blue-400" />
+                  </button>
+                </div>
 
                 <Link
                   href="/"
@@ -176,10 +179,6 @@ export default function Header() {
                       </span>
                     )}
                   </Link>
-                </div>
-
-                <div className="mt-auto">
-                  <ThemeToggle />
                 </div>
               </motion.nav>
           </>

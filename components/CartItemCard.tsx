@@ -81,43 +81,45 @@ const CartItemCard: React.FC<CartItemCardProps> = ({
 
           {/* Quantity Controls */}
           <div className="flex items-center gap-2 mt-2">
-            <Button
-              variant="outline"
-              className="px-3 py-1 text-lg font-bold"
-              onClick={() => {
-                if (item.quantity <= 1) handleRemove();
-                else changeQuantity(item.id, item.quantity - 1);
-              }}
-              aria-label={`Decrease quantity of ${item.name}`}
-            >
-              −
-            </Button>
+          <Button
+            variant="outline"
+            size="md"
+            className="font-bold text-lg"
+            onClick={() => {
+              if (item.quantity <= 1) handleRemove();
+              else changeQuantity(item.id, item.quantity - 1);
+            }}
+            aria-label={`Decrease quantity of ${item.name}`}
+          >
+            −
+          </Button>
             <motion.span
               layout
               className="px-4 py-1 bg-blue-600 text-white rounded-lg font-bold text-lg"
             >
               {item.quantity}
             </motion.span>
-            <Button
-              variant="outline"
-              className="px-3 py-1 text-lg font-bold"
-              onClick={() => changeQuantity(item.id, item.quantity + 1)}
-              aria-label={`Increase quantity of ${item.name}`}
-            >
-              +
-            </Button>
+          <Button
+            variant="outline"
+            size="md"
+            className="font-bold text-lg"
+            onClick={() => changeQuantity(item.id, item.quantity + 1)}
+            aria-label={`Increase quantity of ${item.name}`}
+          >
+            +
+          </Button>
           </div>
         </div>
 
         {/* Remove Button */}
-        <Button
-          variant="outline"
-          className="mt-4 sm:mt-0"
+        <button
+          type="button"
           onClick={handleRemove}
           aria-label={`Remove ${item.name} from cart`}
+          className="mt-4 sm:mt-0 p-2 rounded-xl cursor-pointer hover:bg-red-50 dark:hover:bg-red-900/20 focus:outline-none focus:ring-2 focus:ring-red-400 transition"
         >
-          <Trash2 size={20} />
-        </Button>
+          <Trash2 size={22} className="text-red-600 dark:text-red-400" />
+        </button>
       </Card>
     </motion.div>
   );
